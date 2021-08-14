@@ -5,10 +5,7 @@ import { StyleSheet, Text, View, StatusBar, ImageBackground } from 'react-native
 import Mytextinput from './components/Mytextinput';
 import Mybutton from './components/Mybutton';
 import DatePicker from 'react-datepicker';
-//import 'react-datepicker/dist/react-datepicker.css';
-
-
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 // insert booking function
 export default function InsertBooking({ route, navigation }) {
@@ -60,8 +57,6 @@ export default function InsertBooking({ route, navigation }) {
       alert(' Email must contain the next symbol "."');
       return;
     }
-
-
     if (!vehicleType) {
       alert('Select the type of the vehicle');
       return;
@@ -99,7 +94,7 @@ export default function InsertBooking({ route, navigation }) {
     }
 
     // fetch Verb post
-    fetch('http://localhost:8080/booking', {
+    fetch('https://garagethesis.herokuapp.com/booking', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
@@ -158,15 +153,15 @@ export default function InsertBooking({ route, navigation }) {
         {username}, please provide your details to store a booking in Ger's Garage.
       </Text>
 
-      <Text 
-      style={{
+      <Text
+        style={{
           color: 'black',
           fontWeight: 'bold',
         }}>
         Insert the phone number with the following example</Text>
       <View >
         <Mytextinput
-          style={{outlineWidth: 0}}
+          style={{ outlineWidth: 0 }}
           placeholder=" 0830732879  "
           placeholderTextColor="#003f5c"
           onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
@@ -174,7 +169,7 @@ export default function InsertBooking({ route, navigation }) {
       </View>
       <View >
         <Mytextinput
-          style={{outlineWidth: 0}}
+          style={{ outlineWidth: 0 }}
           placeholder="Email"
           placeholderTextColor="#003f5c"
           onChangeText={(email) => setEmail(email)}
@@ -282,7 +277,7 @@ export default function InsertBooking({ route, navigation }) {
 
       <View >
         <Mytextinput
-          style={{outlineWidth: 0}}
+          style={{ outlineWidth: 0 }}
           placeholder="Insert the licence of the vehicle"
           placeholderTextColor="#003f5c"
           onChangeText={(vehicleLicence) => setVehicleLicence(vehicleLicence)}
@@ -315,26 +310,15 @@ export default function InsertBooking({ route, navigation }) {
         </Picker>
       </View>
 
-      {/* <View style={styles.model}>
+      <View style={styles.model}>
         <DatePicker selected={selectedDate}
           onChange={date => setSelectedDate(date)}
-          dateFormat='yyyy-MM-dd'
+          dateFormat='yyyy/MM/dd'
           minDate={new Date()}
           filterDate={date => date.getDay() != 0}
           isClearable
         />
-      </View> */}
-
-      
-<View style={styles.model}>
-        <DatePicker selected={selectedDate}
-          onChange={date => setSelectedDate(date)}
-          dateFormat='yyyy/MM/dd'
-          filterDate={date => date.getDay() != 0}
-          isClearable
-        />
       </View>
-
 
       <View style={styles.model}>
         <Picker
@@ -351,7 +335,7 @@ export default function InsertBooking({ route, navigation }) {
 
       <View >
         <Mytextinput
-          style={{outlineWidth: 0}}
+          style={{ outlineWidth: 0 }}
           placeholder="Add comment if you need"
           placeholderTextColor="#003f5c"
           onChangeText={(comment) => setComment(comment)}

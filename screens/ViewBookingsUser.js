@@ -17,7 +17,7 @@ export default function ViewBookingsUser({ route, navigation }) {
 
   function Bookings() {
 
-    fetch('http://localhost:8080/user/bookings/' + username, {
+    fetch('https://garagethesis.herokuapp.com/user/bookings/' + username, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',

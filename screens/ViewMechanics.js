@@ -14,7 +14,7 @@ export default function ViewMechanic({ route, navigation }) {
   function view_mechanic() {
 
 
-    fetch('http://localhost:8080/staff', {
+    fetch('https://garagethesis.herokuapp.com/staff', {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',

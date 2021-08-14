@@ -20,7 +20,7 @@ export default function RegisterMechanic({ route, navigation }) {
     }
 
 
-    fetch('http://localhost:8080/staff?name=' + name, {
+    fetch('https://garagethesis.herokuapp.com/staff?name=' + name, {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

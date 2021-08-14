@@ -13,7 +13,7 @@ export default function GetAllBookings({ route, navigation }) {
 
   function AllBookings() {
 
-    fetch('http://localhost:8080/admin/bookings', {
+    fetch('https://garagethesis.herokuapp.com/admin/bookings', {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',

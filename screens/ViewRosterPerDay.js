@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, FlatList } from 'react-native';
 import Mybutton from './components/Mybutton';
 import DatePicker from 'react-datepicker';
-//import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 export default function ViewRosterPerDay({ route, navigation }) {
@@ -31,7 +31,7 @@ export default function ViewRosterPerDay({ route, navigation }) {
     }
 
 
-    fetch('http://localhost:8080/admin/roster?date=' + convert(selectedDate), {
+    fetch('https://garagethesis.herokuapp.com/admin/roster?date=' + convert(selectedDate), {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',

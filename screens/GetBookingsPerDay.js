@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import {  StyleSheet, Text, View, StatusBar, ImageBackground, FlatList } from 'react-native';
 import Mybutton from './components/Mybutton';
-//import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 
 import moment from 'moment';
@@ -32,7 +32,7 @@ export default function GetBookingsPerDay({ route, navigation }) {
     }
 
 
-    fetch('http://localhost:8080/admin/bookings/day?selectedDate=' + convert(selectedDate), {
+    fetch('https://garagethesis.herokuapp.com/admin/bookings/day?selectedDate=' + convert(selectedDate), {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',
